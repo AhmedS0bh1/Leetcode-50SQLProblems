@@ -1,0 +1,6 @@
+1/* Write your T-SQL query statement below */
+2select customer_id,COUNT(customer_id) as 'count_no_trans'
+3From Visits V LEFT JOIN Transactions T ON T.visit_id = V.visit_id
+4WHERE T.visit_id IS NULL
+5GROUP BY customer_id
+6ORDER BY 'count_no_trans' ASC
