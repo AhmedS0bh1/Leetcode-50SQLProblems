@@ -1,0 +1,4 @@
+1SELECT Managers.name
+2FROM Employee as Managers JOIN Employee ON Managers.id = Employee.managerId
+3GROUP BY Managers.name,Managers.id
+4HAVING COUNT(Employee.id)>=5
