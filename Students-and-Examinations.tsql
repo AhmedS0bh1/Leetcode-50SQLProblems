@@ -1,0 +1,5 @@
+1
+2-------------------------------
+3SELECT N.student_id,N.student_name,N.subject_name,COUNT(E.student_id) as attended_exams FROM Examinations E Right JOIN (SELECT student_id,student_name,subject_name FROM Students, Subjects) as N ON N.student_id = E.student_id and N.subject_name = E.subject_name
+4GROUP BY N.student_id,N.student_name,N.subject_name
+5ORDER BY N.student_id,N.subject_name
