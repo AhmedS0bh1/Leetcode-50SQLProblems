@@ -1,0 +1,7 @@
+1SELECT S.user_id ,
+2       ROUND(AVG(CASE
+3       WHEN C.action = 'confirmed' THEN 1.0
+4       ELSE 0.0
+5       END ),2) as confirmation_rate
+6       FROM Signups S LEFT JOIN Confirmations C ON S.user_id = C.user_id
+7       GROUP BY S.user_id 
