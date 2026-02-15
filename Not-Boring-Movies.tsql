@@ -1,0 +1,4 @@
+1SELECT id,movie,C.description,rating
+2FROM Cinema C
+3WHERE C.description != 'boring' AND id%2 != 0
+4order by rating DESC
