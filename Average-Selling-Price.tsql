@@ -1,0 +1,4 @@
+1SELECT P.product_id, ISNULL(ROUND(SUM((price*units*1.0)) / SUM(NULLIF((units+0.0),0)),2),0) AS average_price
+2FROM Prices P  LEFT JOIN UnitsSold U ON U.product_id = P.product_id
+3AND purchase_date >= P.start_date AND purchase_date <= P.end_date
+4GROUP BY P.product_id
